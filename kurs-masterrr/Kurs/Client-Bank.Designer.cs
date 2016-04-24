@@ -33,23 +33,26 @@
             // 
             // button_CB
             // 
-            this.button_CB.Location = new System.Drawing.Point(499, 454);
-            this.button_CB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_CB.ForeColor = System.Drawing.Color.Maroon;
+            this.button_CB.Location = new System.Drawing.Point(92, 308);
+            this.button_CB.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button_CB.Name = "button_CB";
-            this.button_CB.Size = new System.Drawing.Size(195, 76);
+            this.button_CB.Size = new System.Drawing.Size(243, 86);
             this.button_CB.TabIndex = 0;
             this.button_CB.Text = "Выбор файла txt";
             this.button_CB.UseVisualStyleBackColor = true;
             // 
             // Client_Bank
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1167, 545);
+            this.BackColor = System.Drawing.Color.Maroon;
+            this.ClientSize = new System.Drawing.Size(780, 454);
             this.Controls.Add(this.button_CB);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Client_Bank";
-            this.Text = "Client_Bank";
+            this.Text = "Клиент - Банк";
             this.Load += new System.EventHandler(this.Client_Bank_Load);
             this.ResumeLayout(false);
 
