@@ -32,14 +32,14 @@
             this.button_book = new System.Windows.Forms.Button();
             this.button_checkedin = new System.Windows.Forms.Button();
             this.button_checkedout = new System.Windows.Forms.Button();
-            this.textBox_type = new System.Windows.Forms.TextBox();
-            this.textBox_status = new System.Windows.Forms.TextBox();
             this.textBox_cost = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button_addRoom = new System.Windows.Forms.Button();
             this.button_del = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox_number = new System.Windows.Forms.TextBox();
+            this.comboBox_type = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +79,7 @@
             this.button_checkedin.TabIndex = 2;
             this.button_checkedin.Text = "Сдать";
             this.button_checkedin.UseVisualStyleBackColor = false;
+            this.button_checkedin.Click += new System.EventHandler(this.button_checkedin_Click);
             // 
             // button_checkedout
             // 
@@ -91,32 +92,15 @@
             this.button_checkedout.TabIndex = 3;
             this.button_checkedout.Text = "Освободить";
             this.button_checkedout.UseVisualStyleBackColor = false;
-            // 
-            // textBox_type
-            // 
-            this.textBox_type.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_type.Location = new System.Drawing.Point(685, 86);
-            this.textBox_type.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox_type.Name = "textBox_type";
-            this.textBox_type.Size = new System.Drawing.Size(132, 25);
-            this.textBox_type.TabIndex = 4;
-            // 
-            // textBox_status
-            // 
-            this.textBox_status.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_status.Location = new System.Drawing.Point(683, 136);
-            this.textBox_status.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox_status.Name = "textBox_status";
-            this.textBox_status.Size = new System.Drawing.Size(134, 25);
-            this.textBox_status.TabIndex = 5;
+            this.button_checkedout.Click += new System.EventHandler(this.button_checkedout_Click);
             // 
             // textBox_cost
             // 
             this.textBox_cost.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_cost.Location = new System.Drawing.Point(685, 191);
+            this.textBox_cost.Location = new System.Drawing.Point(685, 208);
             this.textBox_cost.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_cost.Name = "textBox_cost";
-            this.textBox_cost.Size = new System.Drawing.Size(132, 25);
+            this.textBox_cost.Size = new System.Drawing.Size(180, 25);
             this.textBox_cost.TabIndex = 6;
             // 
             // label1
@@ -124,31 +108,19 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(680, 57);
+            this.label1.Location = new System.Drawing.Point(680, 109);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 18);
             this.label1.TabIndex = 7;
             this.label1.Text = "Тип номера";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(680, 113);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 18);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Статус";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(682, 171);
+            this.label3.Location = new System.Drawing.Point(682, 179);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 18);
@@ -159,7 +131,7 @@
             // 
             this.button_addRoom.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_addRoom.ForeColor = System.Drawing.Color.Maroon;
-            this.button_addRoom.Location = new System.Drawing.Point(685, 236);
+            this.button_addRoom.Location = new System.Drawing.Point(685, 264);
             this.button_addRoom.Margin = new System.Windows.Forms.Padding(2);
             this.button_addRoom.Name = "button_addRoom";
             this.button_addRoom.Size = new System.Drawing.Size(132, 34);
@@ -182,20 +154,57 @@
             this.button_del.UseVisualStyleBackColor = false;
             this.button_del.Click += new System.EventHandler(this.button_del_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(680, 46);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(119, 18);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Присвоение №";
+            // 
+            // textBox_number
+            // 
+            this.textBox_number.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_number.Location = new System.Drawing.Point(683, 72);
+            this.textBox_number.Margin = new System.Windows.Forms.Padding(2);
+            this.textBox_number.Name = "textBox_number";
+            this.textBox_number.Size = new System.Drawing.Size(182, 25);
+            this.textBox_number.TabIndex = 13;
+            // 
+            // comboBox_type
+            // 
+            this.comboBox_type.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_type.FormattingEnabled = true;
+            this.comboBox_type.Items.AddRange(new object[] {
+            "Стандарт Одноместный",
+            "Стандарт Двухместный",
+            "Стандарт Семейный",
+            "Полулюкс",
+            "Люкс",
+            "Апартаменты"});
+            this.comboBox_type.Location = new System.Drawing.Point(683, 133);
+            this.comboBox_type.Name = "comboBox_type";
+            this.comboBox_type.Size = new System.Drawing.Size(182, 28);
+            this.comboBox_type.TabIndex = 14;
+            // 
             // Rooms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(888, 472);
+            this.Controls.Add(this.comboBox_type);
+            this.Controls.Add(this.textBox_number);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button_del);
             this.Controls.Add(this.button_addRoom);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_cost);
-            this.Controls.Add(this.textBox_status);
-            this.Controls.Add(this.textBox_type);
             this.Controls.Add(this.button_checkedout);
             this.Controls.Add(this.button_checkedin);
             this.Controls.Add(this.button_book);
@@ -211,17 +220,17 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button_book;
         private System.Windows.Forms.Button button_checkedin;
         private System.Windows.Forms.Button button_checkedout;
-        private System.Windows.Forms.TextBox textBox_type;
-        private System.Windows.Forms.TextBox textBox_status;
         private System.Windows.Forms.TextBox textBox_cost;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button_addRoom;
         private System.Windows.Forms.Button button_del;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox_number;
+        private System.Windows.Forms.ComboBox comboBox_type;
     }
 }

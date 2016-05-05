@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.dataGridView_clients = new System.Windows.Forms.DataGridView();
+            this.textBox_info = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,34 +37,36 @@
             this.button_reservation_complete = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_rooms = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox_status = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_clients)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_rooms)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridView_clients
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 34);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(783, 238);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView_clients.AllowUserToAddRows = false;
+            this.dataGridView_clients.AllowUserToDeleteRows = false;
+            this.dataGridView_clients.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView_clients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_clients.Location = new System.Drawing.Point(20, 34);
+            this.dataGridView_clients.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.dataGridView_clients.Name = "dataGridView_clients";
+            this.dataGridView_clients.ReadOnly = true;
+            this.dataGridView_clients.Size = new System.Drawing.Size(783, 238);
+            this.dataGridView_clients.TabIndex = 0;
+            this.dataGridView_clients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // textBox3
+            // textBox_info
             // 
-            this.textBox3.Location = new System.Drawing.Point(930, 149);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(249, 125);
-            this.textBox3.TabIndex = 3;
+            this.textBox_info.Location = new System.Drawing.Point(930, 218);
+            this.textBox_info.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox_info.Multiline = true;
+            this.textBox_info.Name = "textBox_info";
+            this.textBox_info.Size = new System.Drawing.Size(249, 125);
+            this.textBox_info.TabIndex = 3;
             // 
             // label1
             // 
@@ -89,7 +91,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(844, 127);
+            this.label3.Location = new System.Drawing.Point(844, 196);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(143, 18);
@@ -110,7 +112,7 @@
             // 
             this.button_reservation_complete.BackColor = System.Drawing.Color.White;
             this.button_reservation_complete.ForeColor = System.Drawing.Color.Maroon;
-            this.button_reservation_complete.Location = new System.Drawing.Point(930, 299);
+            this.button_reservation_complete.Location = new System.Drawing.Point(930, 368);
             this.button_reservation_complete.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button_reservation_complete.Name = "button_reservation_complete";
             this.button_reservation_complete.Size = new System.Drawing.Size(172, 41);
@@ -133,18 +135,18 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(249, 25);
             this.dateTimePicker2.TabIndex = 10;
             // 
-            // dataGridView2
+            // dataGridView_rooms
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(20, 329);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(783, 238);
-            this.dataGridView2.TabIndex = 11;
+            this.dataGridView_rooms.AllowUserToAddRows = false;
+            this.dataGridView_rooms.AllowUserToDeleteRows = false;
+            this.dataGridView_rooms.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dataGridView_rooms.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_rooms.Location = new System.Drawing.Point(20, 329);
+            this.dataGridView_rooms.Name = "dataGridView_rooms";
+            this.dataGridView_rooms.ReadOnly = true;
+            this.dataGridView_rooms.RowTemplate.Height = 24;
+            this.dataGridView_rooms.Size = new System.Drawing.Size(783, 238);
+            this.dataGridView_rooms.TabIndex = 11;
             // 
             // label5
             // 
@@ -156,14 +158,38 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Номер";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(844, 135);
+            this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 18);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Статус";
+            // 
+            // comboBox_status
+            // 
+            this.comboBox_status.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_status.FormattingEnabled = true;
+            this.comboBox_status.Items.AddRange(new object[] {
+            "Оплачено",
+            "Не оплачено"});
+            this.comboBox_status.Location = new System.Drawing.Point(930, 135);
+            this.comboBox_status.Name = "comboBox_status";
+            this.comboBox_status.Size = new System.Drawing.Size(249, 28);
+            this.comboBox_status.TabIndex = 14;
+            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(1204, 598);
+            this.Controls.Add(this.comboBox_status);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridView_rooms);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.button_reservation_complete);
@@ -171,25 +197,23 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.textBox_info);
+            this.Controls.Add(this.dataGridView_clients);
             this.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.Name = "Booking";
             this.Text = "Бронирование номеров";
             this.Load += new System.EventHandler(this.Reservation_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_clients)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_rooms)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox_info;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -197,7 +221,10 @@
         private System.Windows.Forms.Button button_reservation_complete;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox_status;
+        public System.Windows.Forms.DataGridView dataGridView_clients;
+        public System.Windows.Forms.DataGridView dataGridView_rooms;
     }
 }

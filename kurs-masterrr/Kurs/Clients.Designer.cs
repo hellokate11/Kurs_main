@@ -82,6 +82,7 @@
             this.button_edit_client.TabIndex = 9;
             this.button_edit_client.Text = "редактирвать";
             this.button_edit_client.UseVisualStyleBackColor = true;
+            this.button_edit_client.Click += new System.EventHandler(this.button_edit_client_Click);
             // 
             // Clients
             // 

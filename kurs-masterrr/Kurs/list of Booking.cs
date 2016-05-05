@@ -24,7 +24,7 @@ namespace Kurs
 
 
             SQLiteCommand sql1 = new SQLiteCommand(sqlcon);
-            // sql1.CommandText = "INSERT INTO Rooms (id, type, status, cost) VALUES(1,'sdas', 'sqq', 1000)";
+            
             sqlcon.Open();
             sql1.CommandText = @"SELECT * FROM Reservations;";
 

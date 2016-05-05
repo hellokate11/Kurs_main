@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.textBox_name = new System.Windows.Forms.TextBox();
-            this.textBox_child = new System.Windows.Forms.TextBox();
             this.textBox_phone = new System.Windows.Forms.TextBox();
             this.textBox_dop = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,9 +39,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker_Birthday = new System.Windows.Forms.DateTimePicker();
             this.button_add = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_sex = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_email = new System.Windows.Forms.TextBox();
+            this.comboBox_child = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // textBox_name
@@ -52,14 +52,6 @@
             this.textBox_name.Name = "textBox_name";
             this.textBox_name.Size = new System.Drawing.Size(396, 28);
             this.textBox_name.TabIndex = 0;
-            // 
-            // textBox_child
-            // 
-            this.textBox_child.Location = new System.Drawing.Point(315, 210);
-            this.textBox_child.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.textBox_child.Name = "textBox_child";
-            this.textBox_child.Size = new System.Drawing.Size(196, 28);
-            this.textBox_child.TabIndex = 3;
             // 
             // textBox_phone
             // 
@@ -165,18 +157,20 @@
             this.button_add.UseVisualStyleBackColor = false;
             this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
-            // comboBox1
+            // comboBox_sex
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox_sex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_sex.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_sex.FormattingEnabled = true;
+            this.comboBox_sex.Items.AddRange(new object[] {
             "Мужской ",
             "Женский"});
-            this.comboBox1.Location = new System.Drawing.Point(315, 160);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(264, 29);
-            this.comboBox1.TabIndex = 14;
+            this.comboBox_sex.Location = new System.Drawing.Point(315, 160);
+            this.comboBox_sex.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.comboBox_sex.Name = "comboBox_sex";
+            this.comboBox_sex.Size = new System.Drawing.Size(197, 31);
+            this.comboBox_sex.TabIndex = 14;
+            this.comboBox_sex.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -189,13 +183,29 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Эл. почта";
             // 
-            // textBox1
+            // textBox_email
             // 
-            this.textBox1.Location = new System.Drawing.Point(315, 306);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(396, 28);
-            this.textBox1.TabIndex = 16;
+            this.textBox_email.Location = new System.Drawing.Point(315, 306);
+            this.textBox_email.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.textBox_email.Name = "textBox_email";
+            this.textBox_email.Size = new System.Drawing.Size(396, 28);
+            this.textBox_email.TabIndex = 16;
+            // 
+            // comboBox_child
+            // 
+            this.comboBox_child.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_child.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_child.FormattingEnabled = true;
+            this.comboBox_child.Items.AddRange(new object[] {
+            "нет детей",
+            "1",
+            "2",
+            "3 и больше"});
+            this.comboBox_child.Location = new System.Drawing.Point(315, 210);
+            this.comboBox_child.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
+            this.comboBox_child.Name = "comboBox_child";
+            this.comboBox_child.Size = new System.Drawing.Size(197, 31);
+            this.comboBox_child.TabIndex = 17;
             // 
             // addClient
             // 
@@ -203,9 +213,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(765, 610);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBox_child);
+            this.Controls.Add(this.textBox_email);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBox_sex);
             this.Controls.Add(this.button_add);
             this.Controls.Add(this.dateTimePicker_Birthday);
             this.Controls.Add(this.label6);
@@ -216,7 +227,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_dop);
             this.Controls.Add(this.textBox_phone);
-            this.Controls.Add(this.textBox_child);
             this.Controls.Add(this.textBox_name);
             this.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
@@ -233,7 +243,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBox_name;
-        private System.Windows.Forms.TextBox textBox_child;
         private System.Windows.Forms.TextBox textBox_phone;
         private System.Windows.Forms.TextBox textBox_dop;
         private System.Windows.Forms.Label label1;
@@ -244,8 +253,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker_Birthday;
         private System.Windows.Forms.Button button_add;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_sex;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_email;
+        private System.Windows.Forms.ComboBox comboBox_child;
     }
 }

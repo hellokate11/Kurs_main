@@ -23,6 +23,7 @@ namespace Kurs
         }
 
         list_of_Booking b = new list_of_Booking();
+        Rooms r = new Rooms();
         private void button_reservation_complete_Click(object sender, EventArgs e)
         {
             SQLiteConnection sql = new SQLiteConnection(@"Data Source=D:\reservations1.sqlite; Version=3");
@@ -35,10 +36,19 @@ namespace Kurs
             string id1 = sdr.GetValue(0).ToString();
             if (id1.Length < 1)
                 id1 = "0";
+            //string id_r = "";
+            //foreach (Form f in Application.OpenForms)
+            //{
+            //    if (f.Name == "Rooms")
+            //    {
+            //        id_r = r.dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            //        return;
+            //    }
+            //    //else
+            //    //     id_r = this.dataGridView_rooms.CurrentRow.Cells[0].Value.ToString();
+            //}
 
-
-
-            SQLiteCommand sc = new SQLiteCommand(@"INSERT INTO Reservations(id,dateReserv,reservEnd,status) values(" + (Convert.ToInt32(id1) + 1) + @",'" + dateTimePicker1.Value.ToShortDateString() + @"', '" + dateTimePicker2.Value.ToShortDateString() + @"','" + textBox3.Text + @"')", sql);
+            SQLiteCommand sc = new SQLiteCommand(@"INSERT INTO Reservations(id,dateReserv,reservEnd,status,info,clientID,roomID ) values(" + (Convert.ToInt32(id1) + 1) + @",'" + dateTimePicker1.Value.ToShortDateString() + @"', '" + dateTimePicker2.Value.ToShortDateString() + @"', '" + comboBox_status.SelectedItem.ToString() + @"', '" + textBox_info.Text + @"', '" + dataGridView_clients.CurrentRow.Cells[0].Value.ToString() + @"', '" + dataGridView_rooms.CurrentRow.Cells[0].Value.ToString() + @"')", sql);
 
             sc.ExecuteNonQuery();
             sql.Close();
@@ -55,12 +65,12 @@ namespace Kurs
 
         private void Reservation_Load(object sender, EventArgs e)
         {
-
+            comboBox_status.SelectedIndex = 0;
             if (!File.Exists(@"D:\reservations1.sqlite"))
             {
                 SQLiteConnection.CreateFile(@"D:\reservations1.sqlite");
                 SQLiteConnection sql = new SQLiteConnection(@"Data Source=D:\reservations1.sqlite; Version=3");
-                SQLiteCommand sc = new SQLiteCommand("create table Reservations(id INTEGER PIMARY KEY, dateReserv TEXT, reservEnd TEXT, status TEXT)", sql);
+                SQLiteCommand sc = new SQLiteCommand("create table Reservations(id INTEGER PIMARY KEY, dateReserv TEXT, reservEnd TEXT, status TEXT, info TEXT, clientID INTEGER, roomID INTEGER)", sql);
 
                 sql.Open(); sc.ExecuteNonQuery(); sql.Close();
             }
@@ -74,7 +84,7 @@ namespace Kurs
             SQLiteDataReader sdr = sс.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Load(sdr);
-            dataGridView1.DataSource = dt;
+            dataGridView_clients.DataSource = dt;
 
             sdr.Close();
             sqlcon.Close();
@@ -88,7 +98,7 @@ namespace Kurs
             SQLiteDataReader sdr1 = sс1.ExecuteReader();
             DataTable dt1 = new DataTable();
             dt1.Load(sdr1);
-            dataGridView2.DataSource = dt1;
+            dataGridView_rooms.DataSource = dt1;
 
             sdr1.Close();
             sqlcon1.Close();
